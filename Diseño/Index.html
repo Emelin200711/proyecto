@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa y Calzado</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+       header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;  a ojo */
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .imagen-redonda {
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .imagen-redonda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .social-icons img {
+            width: 32px;
+            margin: 0 10px;
+        }
+        .social-icons a {
+            display: inline-block;
+        }
+
+        /* Estilo del contenedor de "Nosotros" */
+        .nosotros-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .nosotros-text {
+            flex: 1 1 60%;
+            text-align: justify;
+            padding: 20px;
+        }
+        .nosotros-text h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .nosotros-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+        }
+        .nosotros-image {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nosotros-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mejoras en las imágenes de la sección de inicio */
+        .inicio-images {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .inicio-images .image-item {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .inicio-images .image-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .inicio-images .image-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsividad */
+        @media screen and (max-width: 768px) {
+            .inicio-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .inicio-images .image-item {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+            .nosotros-container {
+                flex-direction: column;
+            }
+            .nosotros-text, .nosotros-image {
+                flex-basis: 100%;
+            }
+        }
+        /* Estilos para la sección de Blog */
+#blog {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #e3f2fd; /* Azul clarito */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#blog h2 {
+    color: #333;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#blog p {
+    color: #666;
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#blog article {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff; /* Fondo blanco para los artículos */
+    border-radius: 10px;
+}
+
+#blog article h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#blog article img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#blog article p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+}
+
+#blog article a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#blog article a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    #blog {
+        padding: 15px;
+    }
+
+    #blog h2 {
+        font-size: 1.6em;
+    }
+
+    #blog article {
+        padding: 15px;
+    }
+
+    #blog article h3 {
+        font-size: 1.5em;
+    }
+
+    #blog article p {
+        font-size: 0.9em;
+    }
+}
+/* Estilos para la sección de Contacto */
+#contactanos {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#contactanos h2 {
+    color: #00796b;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover, .contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form h3, .contact-info h3 {
+    color: #00796b;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    color: #00796b;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #00796b;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #004d40;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #004d40;
+}
+
+.contact-info .social-icons {
+    margin-top: 10px;
+}
+
+.contact-info .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.contact-info .social-icons img {
+    width: 40px;
+    transition: transform 0.3s ease;
+}
+
+.contact-info .social-icons img:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-form, .contact-info {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+ .imagen-redonda {
+            width: 200px; /* Ajusta el tamaño según tus necesidades */
+            height: 200px; /* Asegúrate de que sea igual a la anchura para que sea un círculo perfecto */
+            border-radius: 50%; /* Esto hace que la imagen sea redonda */
+            overflow: hidden; /* Oculta cualquier parte de la imagen que esté fuera del círculo */
+        }
+
+        .imagen-redonda img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra todo el círculo sin deformarse */
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header style="display: flex; align-items: center; justify-content: center; background-color: #333; color: #fff; padding: 20px 0;">
+    <div class="imagen-redonda" style="margin-right: 20px;">
+        <img src="img/yopi.jpeg" alt="Imagen redonda" align="center">
+    </div>
+    <h1 style="margin: 0;">Tienda de Ropa y Calzado</h1>
+</header>
+
+
+<nav>
+    
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#productos">Productos</a>
+    <a href="#blog">Blog</a>
+    <a href="#contactanos">Contáctanos</a>
+</nav>
+
+<section id="inicio">
+    <div class="intro-text">
+        <h1 align="center">Bienvenidos a Nuestra Tienda</h1>
+        <p align="center">Explora las últimas tendencias en moda para toda la familia.</p>
+        <h2 align="center">Tenis</h2>
+    </div>
+
+    <div class="inicio-images">
+        <div class="image-item">
+            <img src="img/zapatos.png" alt="Moda para Caballeros">
+            <p align="center">La comodidad en tus pies</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos1.png" alt="Moda para Caballeros">
+            <p align="center">Ideal para hacer deporte</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos3.jfif" alt="Moda para Caballeros">
+            <p align="center">Perfectos combinan con todo</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos5.jfif" alt="Moda para Caballeros">
+            <p align="center">Estilo perfecto para tus días diarios</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos6.jfif" alt="Moda para Caballeros">
+            <p align="center">Lo más cómodo para tus pequeños</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos7.jfif" alt="Moda para Caballeros">
+            <p align="center">Estilo a la moda para tus niños</p>
+        </div>
+    </div>
+
+    <h2 align="center">Camisas de Damas</h2>
+    <div class="inicio-images">
+        <div class="image-item">
+            <img src="img/camisa1.jfif" alt="Moda para Damas">
+            <p align="center">Lo mejor en moda</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa2.jfif" alt="Moda para Damas">
+            <p align="center">La combinación perfecta</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa3.jfif" alt="Moda para Damas">
+            <p align="center">Perfecto combina con tu pareja</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisas4.jfif" alt="Moda para Damas">
+            <p align="center">Perfecto para tus días diarios</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa5.jfif" alt="Moda para Damas">
+            <p align="center">Lo más cómodo para tus pequeños</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa6.jfif" alt="Moda para Damas">
+            <p align="center">Estilo deportivo</p>
+        </div>
+    </div>
+
+    <h2 align="center">Ropa para Caballeros</h2>
+    <div class="inicio-images">
+        <div class="image-item">
+            <img src="img/hombre1.jfif" alt="Moda para Caballeros">
+            <p align="center">Lo mejor en moda</p>
+        </div>
+        <div class="image-item">
+            <img src="img/hombre2.jfif" alt="Moda para Caballeros">
+            <p align="center">La combinación perfecta</p>
+        </div>
+        <div class="image-item">
+            <img src="img/hombre3.jfif" alt="Moda para Caballeros">
+            <p align="center">Perfecto combina con tu pareja</p>
+        </div>
+        <div class="image-item">
+            <img src="img/hombre4.jfif" alt="Moda para Caballeros">
+            <p align="center">Perfecto para tus días diarios</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa7.jfif" alt="Moda para Caballeros">
+            <p align="center">Lo más formal para tus días importantes</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa8.jfif" alt="Moda para Caballeros">
+            <p align="center">Estilo clásico</p>
+        </div>
+    </div>
+
+    <h2 align="center">Vestidos para Damas</h2>
+    <div class="inicio-images">
+        <div class="image-item">
+            <img src="img/vestido1.jfif" alt="Moda para Damas">
+            <p align="center">Estilo moderno</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido2.jfif" alt="Moda para Damas"><br><br>
+            <p align="center">Frescos para tus días soleados</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido3.jfif" alt="Moda para Damas">
+            <p align="center">Perfecto para tus ocasiones especiales</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido4.jfif" alt="Moda para Damas">
+            <p align="center">Lo mejor para tus momentos formales</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido5.jfif" alt="Moda para Damas"><br><br><br><br><br><br>
+            <p align="center">Estilo a la moda para cualquier ocasión</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido6.jfif" alt="Moda para Damas"><br> <br><br><br><br>
+            <p align="center">Estilo fresco</p>
+        </div>
+    </div>
+</section>
+
+<section id="nosotros">
+    <div class="nosotros-container">
+        <div class="nosotros-text">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Bienvenidos a nuestra tienda de ropa y calzado, donde la moda se encuentra con la calidad y el estilo. Somos una empresa comprometida con ofrecer lo mejor en vestimenta para toda la familia, con una amplia variedad de productos que se adaptan a cada ocasión y necesidad. 
+            </p>
+            <p>
+                En nuestra tienda, creemos en la importancia de vestirse bien y sentirse cómodo al mismo tiempo. Es por eso que trabajamos con las mejores marcas y proveedores para garantizar que nuestros clientes siempre encuentren lo que están buscando. Desde ropa casual hasta atuendos formales, pasando por calzado deportivo y elegante, tenemos todo lo que necesitas para completar tu guardarropa.
+            </p>
+            <p>
+                Nuestro equipo de atención al cliente está siempre disponible para ayudarte a encontrar el producto perfecto, brindándote un servicio personalizado y amigable. Además, estamos comprometidos con la sostenibilidad, por lo que ofrecemos opciones de moda eco-amigable y de comercio justo.
+            </p>
+            <p>
+                Te invitamos a explorar nuestra tienda y descubrir las últimas tendencias en moda para damas, caballeros y niños. ¡Gracias por elegirnos como tu tienda de confianza!
+            </p>
+        </div>
+        <div class="nosotros-image">
+            <img src="img/nosotros.jpg" alt="Nosotros">
+        </div>
+    </div>
+</section>
+<section id="productos">
+    <div class="intro-text">
+        <h1 align="center"> Lo que ofrecemos y sus precios</h1>
+        <h2 align="center">Tenis</h2>
+    </div>
+
+    <div class="inicio-images">
+        <div class="image-item">
+            <img src="img/zapatos.png" alt="Moda para Caballeros">
+            <p align="center">L.3,000.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos1.png" alt="Moda para Caballeros">
+            <p align="center">L. 3,500.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos3.jfif" alt="Moda para Caballeros"><br><br><br>
+            <p align="center">L. 1,500.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos5.jfif" alt="Moda para Caballeros">
+                        <p align="center">L. 1,500.00</p>
+
+            <p align="center"></p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos6.jfif" alt="Moda para Caballeros">
+            <p align="center">L. 800.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/zapatos7.jfif" alt="Moda para Caballeros">
+            <p align="center">L. 800.00</p>
+        </div>
+    </div>
+    <h2 align="center">Camisas de Damas</h2>
+    <div class="inicio-images">
+        <div class="image-item">
+            <img src="img/camisa1.jfif" alt="Moda para Damas"><br>
+            <p align="center">L. 500.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa2.jfif" alt="Moda para Damas">
+            <p align="center">L. 500.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa3.jfif" alt="Moda para Damas">
+            <p align="center">L. 500.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisas4.jfif" alt="Moda para Damas">
+            <p align="center">L. 400.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa5.jfif" alt="Moda para Damas"><br><br>
+            <p align="center">L. 300.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa6.jfif" alt="Moda para Damas"><br><br><br>
+            <p align="center">L. 700.00</p>
+        </div>
+    </div>
+    <h2 align="center">Ropa para Caballeros</h2>
+    <div class="inicio-images">
+        <div class="image-item">
+            <img src="img/hombre1.jfif" alt="Moda para Caballeros">
+            <p align="center">L. 700.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/hombre2.jfif" alt="Moda para Caballeros">
+            <p align="center">L. 700.00</p>
+        </div>
+       
+        <div class="image-item">
+            <img src="img/hombre4.jfif" alt="Moda para Caballeros">
+            <p align="center">L. 700.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa7.jfif" alt="Moda para Caballeros">
+            <p align="center">L. 700.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/camisa8.jfif" alt="Moda para Caballeros">
+            <p align="center">L. 700.00</p>
+        </div>
+    </div>
+
+    <h2 align="center">Vestidos para Damas</h2>
+    <div class="inicio-images">
+        <div class="image-item">
+            <img src="img/vestido1.jfif" alt="Moda para Damas">
+            <p align="center">L.800.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido2.jfif" alt="Moda para Damas"><br><br>
+            <p align="center">L. 700.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido3.jfif" alt="Moda para Damas">
+            <p align="center">L. 600.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido4.jfif" alt="Moda para Damas">
+            <p align="center">L. 400.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido5.jfif" alt="Moda para Damas"><br><br><br><br><br><br>
+            <p align="center">L. 1,000.00</p>
+        </div>
+        <div class="image-item">
+            <img src="img/vestido6.jfif" alt="Moda para Damas"><br> <br><br><br><br>
+            <p align="center">L. 400.00</p>
+        </div>
+    </div>
+</section>
+<section id="blog">
+    <h2>Blog de Moda</h2>
+    <p>Bienvenido a nuestro blog, donde compartimos las últimas novedades, consejos de estilo y mucho más. ¡Mantente al tanto de todo lo que sucede en el mundo de la moda con nosotros!</p>
+    
+    <!-- Entrada de Blog 1 -->
+    <article>
+        <h3>Las Tendencias de Moda para Otoño 2024</h3>
+        <p>El otoño ha llegado y con él, nuevas tendencias de moda que están marcando el ritmo. Desde colores cálidos hasta tejidos acogedores, descubre cómo actualizar tu guardarropa para esta temporada.</p>
+    </article>
+    
+    
+    <!-- Entrada de Blog 3 -->
+    <article>
+        <h3>Historia de Éxito: Cómo Encontramos la Moda Perfecta para Nuestros Clientes</h3>
+        <p>Conoce a nuestros clientes y descubre cómo nuestros productos han transformado sus vidas. Estas historias muestran el impacto positivo que la moda puede tener en nuestro día a día.</p>
+    </article>
+
+    <!-- Entrada de Blog 4 -->
+    <article>
+        <h3>La Moda Sostenible: Un Paso Hacia un Futuro Más Verde</h3>
+        <p>La moda sostenible es más que una tendencia; es una necesidad. Aprende sobre los esfuerzos de nuestra tienda para ofrecer productos eco-amigables y cómo puedes contribuir a un mundo más verde.</p>
+    </article>
+</section>
+
+<section id="contactanos">
+    <h2>Contáctanos</h2>
+    <div class="contact-container">
+        <div class="contact-form">
+            <h3>Envíanos un Mensaje</h3>
+            <form>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+                <label for="email">Correo Electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h3>Información de Contacto</h3>
+            <p><strong>Teléfono:</strong> +123 456 7890</p>
+            <p><strong>Correo Electrónico:</strong> contacto@tiendaejemplo.com</p>
+            <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad, País</p>
+            <div class="social-icons">
+                <a href="#"><img src="img/icono-facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="icono-instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="icono-twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Tienda de Ropa y Calzado. Todos los derechos reservados.</p>
+    
+</footer>
+
+</body>
+</html>
